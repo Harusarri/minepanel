@@ -152,7 +152,7 @@ export class SystemMonitoringService {
     free: number;
   }> {
     try {
-      const { stdout } = await execAsync('df -k / | tail -1');
+      const { stdout } = await execAsync('df -k /mnt/server | tail -1');
       const parts = stdout.trim().split(/\s+/);
 
       const total = Number.parseInt(parts[1]) * 1024;
